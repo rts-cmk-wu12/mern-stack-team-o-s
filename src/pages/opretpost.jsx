@@ -1,5 +1,6 @@
 import React from 'react';
-
+import CreatePost from '../assets/components/createpost';
+import '../style.css'
 const OpretPost = () => {
     return (
         <div className="opret-post-container">
@@ -12,6 +13,7 @@ const OpretPost = () => {
                     Gå til dine indlæg
                 </button>
             </div>
+            <CreatePost />
         </div>
     );
 };

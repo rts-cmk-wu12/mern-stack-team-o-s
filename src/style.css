@@ -132,3 +132,42 @@ body {
     color: white;
     transform: translateY(-4px);
 }
+
+
+
+/* createpost.css */
+
+.create-post {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+}
+
+.create-post__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.create-post__input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.create-post__textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    min-height: 200px;
+    resize: vertical;
+}
+
+.create-post__input:focus,
+.create-post__textarea:focus {
+    outline: none;
+    border-color: blue;
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.3);
+}
