@@ -15,7 +15,15 @@ server.get("/message", (_, res) => res.send("Hello from express!"));
 server.get("/api/posts", async (_, response,) => {
     const posts = database.collection('posts');
     const postData = await posts.find().toArray()
-    const postName = postData.map(post => { return { title: post.title, content: post.content, author: post.author } })
+    const postName = postData.map(post => { 
+        return { 
+            id: post._id,
+            title: post.title, 
+            content: post.content, 
+            author: post.author 
+        } 
+        
+    })
     response.json(postName)
 });
 
@@ -32,9 +40,9 @@ server.post("/api/posts", async (req, res) => {
     }
 });
 
-server.delete("/api/posts/:id", async (req, res) => {
+server.delete("/api/posts/:_id", async (req, res) => {
     try {
-        const result = await posts.deleteOne({ id: req.params.id });
+        const result = await posts.deleteOne({ id: new Object_id(req.params.id) });
         if (result.deletedCount === 1) {
             res.status(200).json({ message: "Post deleted successfully" });
         } else {

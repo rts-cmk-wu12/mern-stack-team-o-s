@@ -11,13 +11,19 @@ function Forside() {
   }, [])
 
   async function fetchData() {
-    const response = await fetch('api/posts')
+
+    const response = await fetch('http://localhost:3000/api/posts')
     const data = await response.json()
     setPosts(data)
   }
 
-  const handleDelete = async (postId) => {
-    const response = await fetch(`api/posts/${postId}`, {
+
+
+
+  const handleDelete = async (id) => {
+    console.log(id)
+
+    const response = await fetch(`http://localhost:3000/api/posts/${id}`, {
       method: 'DELETE'
     })
     if (response.ok) {
@@ -35,8 +41,8 @@ function Forside() {
         </div>
       </div>
      
-      {posts.map((post, index) => (
-        <div className="post-container" key={index}>
+      {posts.map((post) => (
+        <div className="post-container" key={post.id}>
           <div className="post-card">
             <div className="post-header">{post.title}</div>
             <div className="post-content">
