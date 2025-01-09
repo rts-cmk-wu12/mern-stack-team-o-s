@@ -32,7 +32,7 @@ body {
 }
 
 .post-container:hover{
-    background-color: blue;
+    background-color: #ccc;
     transform: translateY(-8px);
     transition-duration: 500ms;
     color: white;
@@ -131,6 +131,26 @@ body {
     background-color: rgb(87, 87, 240);
     color: white;
     transform: translateY(-4px);
+}
+
+
+.delete-button {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    transition-duration: 300ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-button:hover {
+    background-color: white;
+    color: red;
+    transform: scale(1.1);
 }
 
 
