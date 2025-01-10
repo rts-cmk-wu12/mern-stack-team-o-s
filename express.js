@@ -24,23 +24,6 @@ ViteExpress.listen(server, 3000, async () => console.log("Server is running at h
 server.use(express.json());
 
 server.post("/api/posts", async (req, res) => {
-    try {
-        const newPost = await posts.insertOne(req.body);
-        res.status(201).json(newPost);
-    } catch (error) {
-        res.status(500).json({ message: "Error creating post" });
-    }
-});
-
-server.delete("/api/posts/:id", async (req, res) => {
-    try {
-        const result = await posts.deleteOne({ id: req.params.id });
-        if (result.deletedCount === 1) {
-            res.status(200).json({ message: "Post deleted successfully" });
-        } else {
-            res.status(404).json({ message: "Post not found" });
-        }
-    } catch (error) {
-        res.status(500).json({ message: "Error deleting post" });
-    }
+    const newPost = await posts.insertOne(req.body);
+    res.status(201).json(newPost);
 });

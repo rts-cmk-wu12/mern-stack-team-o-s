@@ -16,15 +16,6 @@ function Forside() {
     setPosts(data)
   }
 
-  const handleDelete = async (postId) => {
-    const response = await fetch(`api/posts/${postId}`, {
-      method: 'DELETE'
-    })
-    if (response.ok) {
-      fetchData()
-    }
-  }
-
   return (
     <>
       <div className="navbar">
@@ -43,7 +34,7 @@ function Forside() {
               <div className="post-email">{post.content}</div>
               <div className="post-password">{post.author}</div>
             </div>
-            <button onClick={() => handleDelete(post.id)} className="delete-button"><FaTrashAlt /></button>
+            <button className="delete-button"><FaTrashAlt /></button>
           </div>
         </div>
       ))}
