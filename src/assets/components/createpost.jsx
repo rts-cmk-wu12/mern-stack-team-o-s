@@ -58,7 +58,7 @@ const CreatePost = () => {
                     type="date"
                     onChange={handleChange}
                 />
-                <button type='submit'>Create Post</button>
+                <button className='create-button' type='submit'>Create Post</button>
             </form>
         </div>
     );
